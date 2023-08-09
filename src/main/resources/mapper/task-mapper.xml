@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bindstone.todo.task.TaskRepository">
+
+    <select id="getTaskKey" resultType="int">
+        SELECT nextval('todo_seq');
+    </select>
+
+    <select id="getTasks" resultType="com.bindstone.todo.task.Task">
+        SELECT "id", "name", "description", "status" FROM task
+    </select>
+
+    <select id="getTask" resultType="com.bindstone.todo.task.Task">
+        SELECT "id", "name", "description", "status" FROM task where id = #{id}
+    </select>
+
+    <insert id="insertTask" parameterType="com.bindstone.todo.task.Task">
+        INSERT INTO task("id", "name", "description", "status") values(#{id}, #{name}, #{description}, #{status})
+    </insert>
+
+    <update id="updateTask" parameterType="com.bindstone.todo.task.Task">
+        UPDATE task set "name" = #{name}, "description" = #{description}, "status" = #{status} where "id" = #{id}
+    </update>
+
+    <delete id="deleteTask">
+        DELETE FROM task where id = #{id}
+    </delete>
+
+</mapper>

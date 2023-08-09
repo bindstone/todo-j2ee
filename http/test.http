@@ -1,2 +1,29 @@
-### GET request with a header
-GET http://127.0.0.1:8080/api/todo
+### GET List of tasks
+GET http://localhost:8080/todo-app/tasks
+
+### GET Single task
+GET http://localhost:8080/todo-app/tasks/1
+
+### INSERT Single task
+POST http://localhost:8080/todo-app/tasks
+Content-Type: application/json
+
+{
+  "name": "name new",
+  "description": "description new",
+  "status": "OPEN"
+}
+
+### UPDATE Single task
+PUT http://localhost:8080/todo-app/tasks
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "name update",
+  "description": "description update",
+  "status": "PROGRESS"
+}
+
+### DELETE Single task
+DELETE http://localhost:8080/todo-app/tasks/2
