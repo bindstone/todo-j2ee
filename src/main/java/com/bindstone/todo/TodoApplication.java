@@ -1,26 +1,11 @@
 package com.bindstone.todo;
 
-import com.bindstone.todo.controller.TodoController;
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
+import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
+import org.eclipse.microprofile.openapi.annotations.info.Info;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
-import java.util.HashSet;
-import java.util.Set;
-
-@ApplicationPath("/todo")
+@ApplicationPath("/")
+@OpenAPIDefinition(info = @Info(title = "Todo Application", version = "1.0.0"))
 public class TodoApplication extends Application {
-
-    public TodoApplication() {
-        this.singletons.add(new TodoController());
-    }
-
-    private Set<Object> singletons = new HashSet();
-    private Set<Class<?>> empty = new HashSet();
-
-    public Set<Class<?>> getClasses() {
-        return this.empty;
-    }
-    public Set<Object> getSingletons() {
-        return this.singletons;
-    }
 }
