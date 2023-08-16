@@ -1,0 +1,7 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Confi 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+<!--  https://edwin.baculsoft.com/2011/03/beginning-mybatis-datasource-jndi-and-apache-dbcp/  -->
+<configuration>
+    <mappers>
+        <mapper resource="mapper/task-mapper.xml" />
+    </mappers>
+</configuration>

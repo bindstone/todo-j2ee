@@ -1,15 +1,15 @@
-package com.bindstone.todo.domain;
+package com.bindstone.todo.task;
 
 import java.util.Objects;
 
-public class Todo implements Comparable<Todo> {
+public class Task implements Comparable<Task> {
     private String name;
     private int id;
 
-    public Todo() {
+    public Task() {
     }
 
-    public Todo(final int id, final String name) {
+    public Task(final int id, final String name) {
         this.id = id;
         this.name = name;
     }
@@ -40,10 +40,10 @@ public class Todo implements Comparable<Todo> {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof Todo)) {
+        if (!(obj instanceof Task)) {
             return false;
         }
-        final Todo other = (Todo) obj;
+        final Task other = (Task) obj;
         return id == other.id;
     }
 
@@ -53,7 +53,7 @@ public class Todo implements Comparable<Todo> {
     }
 
     @Override
-    public int compareTo(final Todo o) {
+    public int compareTo(final Task o) {
         return Integer.compare(id, o.id);
     }
 }

@@ -1,2 +1,5 @@
 ### GET request with a header
-GET http://localhost:8080/todo-app/todos
+GET http://localhost:8080/todo-app/tasks
+
+### GET request with a header
+GET http://localhost:8080/todo-app/openapi

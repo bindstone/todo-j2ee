@@ -1,8 +1,25 @@
 services:
 
+  postgres:
+    container_name: postgres
+    build: infrastructure/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - devnet
+
   todo:
+    depends_on:
+      - postgres
+
     container_name: todo
     build: .
     ports:
       - "8080:8080"
       - "9990:9990"
+    networks:
+      - devnet
+
+networks:
+  devnet:
+    driver: bridge
